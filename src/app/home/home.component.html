@@ -6,6 +6,8 @@
   style="width: 30%" />
   <button type="button" class="btn btn-primary">Search</button> </form>
 </section>
-<section class="results"> 
-    <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
+<section class="results">
+    @for (housingLocation of housingLocationList; track housingLocation){ <app-housing-location
+    [housingLocation]="housingLocation" ></app-housing-location>
+    }
 </section>
