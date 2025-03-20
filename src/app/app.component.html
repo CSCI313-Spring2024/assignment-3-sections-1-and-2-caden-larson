@@ -4,6 +4,16 @@
     class="brand-logo" src="house-logo.png" alt="logo" aria-hidden="true"
     />
     </header>
-    <section class="content">
-    <app-home></app-home> </section>
+    <section class="container">
+        <a [routerLink]="['/']">
+            <main>
+            <header class="brand-name">
+            <img
+            class="brand-logo" src="house-logo.png" alt="logo" aria-hidden="true"
+            /> </header>
+            </main> </a>
+            <section class="content">
+            <!-- <app-home></app-home> --> <router-outlet></router-outlet>
+              </section>
+        </div> </section>
 </main>
