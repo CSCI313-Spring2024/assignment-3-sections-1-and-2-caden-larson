@@ -14,9 +14,20 @@ export class HomeComponent {
   // readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
   housingLocationList: HousingLocation[] = [];
 
+  filteredLocationList: HousingLocation[] = [];
+
+
+
   housingService: HousingService = inject(HousingService);
   // Injecting HousingService into the Component housingService: HousingService = inject(HousingService);
     constructor(){
       //setting housingLocationlist to the data array in HousingService
   this.housingLocationList = this.housingService.getAllHousingLocations(); }
+
+  filterResults(text:string){
+    if (!text) {
+  this.filteredLocationList = this.housingLocationList;
+  return; }
+  this.filteredLocationList = this.housingLocationList.filter((housingLocation) => housingLocation?.city.toLowerCase().includes(text.toLowerCase()),
+  ); }
   }
